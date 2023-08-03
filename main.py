@@ -17,9 +17,11 @@ from flask_gravatar import Gravatar
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from flask_login import LoginManager
+from dotenv import load_dotenv
 
+load_dotenv("C:/Users/valer/Desktop/Python/EnvironmentVariables/.env")
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.getenv("blog_with_users_SECRET_KEY")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 login_manager = LoginManager()
