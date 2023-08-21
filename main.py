@@ -1,3 +1,4 @@
+import os
 from functools import wraps
 
 import wtforms as wtf
@@ -17,9 +18,7 @@ from flask_gravatar import Gravatar
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from flask_login import LoginManager
-from dotenv import load_dotenv
 
-load_dotenv("C:/Users/valer/Desktop/Python/EnvironmentVariables/.env")
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv("blog_with_users_SECRET_KEY")
 ckeditor = CKEditor(app)
